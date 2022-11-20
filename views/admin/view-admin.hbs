@@ -1,0 +1,83 @@
+<section>
+  
+  <div class="container bg-dark ">
+    
+    {{#if admins}}
+    <div class="container-flex">
+        
+        <form>
+            
+  <div class="d-flex bd-highlight mt-5 mb-5">
+    <input type="text" id="Input" onkeyup="search()" class="form-control w-50 bd-highligh" placeholder="Search">
+      {{!-- <button class="btn btn-primary ms-1 bd-highligh" type="reset">
+        Clear
+      </button> --}}
+    <a class="btn btn-success ms-auto  bd-highlight" href="/super-admin/create-admin/" type="submit">ADD ADMINS</a>
+  </div>
+  
+</form>
+
+        <h1 class="mt-2 mb-3 fs-3 text-light">Admins</h1>
+           
+    
+  </div>
+      <table id="table" class="table text-light">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            {{!-- <th scope="col">Control</th> --}}
+            <th scope="col">Password</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          {{#each admins}}
+
+              <th scope="row">{{inc @index}}</th>
+              <td>{{this.firstName}}</td>
+              <td>{{this.secondName}}</td>
+              <td>{{this.email}}</td>
+              {{!-- <td>{{this.admin}}</td> --}}
+              <td>{{this.password}}</td>
+              <td><a
+                  class="btn btn-primary"
+                  href="/super-admin/edit-admin/?id={{this._id}}"
+                >Edit</a>
+            </td>
+            <td><a
+                  onclick="return confirm('Are you want to delete {{this.firstName}} {{this.secondName}} ?')"
+                  class="btn btn-danger"
+                  href="/super-admin/remove-user/?id={{this._id}}"
+                >Remove</a>
+            </td>
+
+            </tr>
+            
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <div class="col">
+        <h1 class="text-light mt-5 pt-5">No Admin</h1>
+        <a class="btn btn-danger"  href="/super-admin/create-admin" type="submit">ADD ADMIN</a>
+      </div>
+    {{/if}}
+
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+            $(document).ready(function() {
+                $("#Input").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#tbody tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+</script>

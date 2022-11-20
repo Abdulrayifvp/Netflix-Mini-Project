@@ -1,0 +1,103 @@
+<section>
+  <div class="container p-5">
+    <h1 class="text-light mt-5 mb-5">Edit Admin</h1>
+    <form class="row g-3 text-light" action="/super-admin/edit-admin/?id={{user._id}}" method="post" >
+      <h2>User ID : {{user._id}}</h2>
+      <div class="col-md-6">
+        
+        <label for="inputfname4" class="form-label">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          class="form-control"
+          id="inputfname4"
+          value="{{user.firstName}}"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputsname4" class="form-label">Second Name</label>
+        <input
+          type="text"
+          name="secondName"
+          class="form-control"
+          id="inputsname4"
+          value="{{user.secondName}}"
+          required
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputCity" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="inputemail4"
+          value="{{user.email}}"
+          required
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputpassword4" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="pass"
+          placeholder="Minimum 8 Characters"
+          value="{{user.password}}"
+          required
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputconfirmpassword4" class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          class="form-control"
+          id="confirm_pass"
+          placeholder="Minimum 8 Characters"
+          value="{{user.confirmPassword}}"
+          onkeyup="validate_password()"
+          required
+        />
+      </div>
+      <span id="wrong_pass_alert"></span>
+
+      <div class="flexbox mt-4">
+        <button  type="submit" onclick="wrong_pass_alert()" class="btn btn-danger">UPDATE</button>
+    </div>
+  </div>
+</section>
+<script>
+        function validate_password() {
+ 
+            var pass = document.getElementById('pass').value;
+            var confirm_pass = document.getElementById('confirm_pass').value;
+            if (pass != confirm_pass) {
+                document.getElementById('wrong_pass_alert').style.color = 'red';
+                document.getElementById('wrong_pass_alert').innerHTML
+                  = '☒ Use same password';
+                document.getElementById('create').disabled = true;
+                document.getElementById('create').style.opacity = (0.4);
+            } else {
+                document.getElementById('wrong_pass_alert').style.color = 'green';
+                document.getElementById('wrong_pass_alert').innerHTML =
+                    '🗹 Password Matched';
+                document.getElementById('create').disabled = false;
+                document.getElementById('create').style.opacity = (1);
+            }
+        }
+ 
+        function wrong_pass_alert() {
+            if (document.getElementById('pass').value != "" &&
+                document.getElementById('confirm_pass').value != ""&&
+                document.getElementById('inputemail4').value !=""&&
+                document.getElementById('inputsname4').value !=""&&
+                document.getElementById('inputfname4').value !="") {
+                confirm('Click OK to update .Are you sure ?')
+            } else {
+                alert("Please fill all the fields");
+            }
+        }
+    </script>

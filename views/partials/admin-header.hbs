@@ -1,0 +1,44 @@
+<header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ms-2 me-2">
+          <a class="navbar-brand" href="#"><img
+              src="../../images/Logonetflix.png"
+              height="50px"
+              width="150px"
+              alt=""
+              srcset=""
+            /></a>
+            <h3 class="text-light me-3">Admin Pannel</h3>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/admin">Uploads</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ratings</a>
+              </li>
+              {{!-- <li class="nav-item">
+                <a class="nav-link" href="/admin/control">Admin</a>
+              </li> --}}
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/subscribers">Subscribers</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a class="btn btn-danger" href="/logout" type="submit">Logout</a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>

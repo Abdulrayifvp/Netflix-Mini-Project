@@ -1,0 +1,57 @@
+<section>
+  <div class="container p-5">
+    <h1 class="text-light mt-5 mb-5">Create Subscribers</h1>
+    <form class="row g-3 text-light" action="/admin/create-user/" method="post" >
+      <div class="col-md-6">
+        <label for="inputfname4" class="form-label">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          class="form-control"
+          id="inputfname4"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputsname4" class="form-label">Second Name</label>
+        <input
+          type="text"
+          name="secondName"
+          class="form-control"
+          id="inputsname4"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputCity" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="inputemail4"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputpassword4" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="inputpassword4"
+          placeholder="Minimum 8 Characters"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputconfirmpassword4" class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          class="form-control"
+          id="inputconfirmpassword4"
+          placeholder="Minimum 8 Characters"
+        />
+      </div>
+
+      <div class="flexbox mt-4">
+        <button  type="submit" class="btn btn-danger">Create</button>
+    </div>
+  </div>
+</section>

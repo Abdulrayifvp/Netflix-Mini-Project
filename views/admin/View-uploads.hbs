@@ -1,0 +1,38 @@
+<section>
+<div class="container bg-dark">
+    {{!-- <div class="row"> --}}
+        <a class="btn btn-success w-25 float-end  mb-4 mt-4" href="/admin/upload">UPLOAD NEW</a>
+    {{!-- </div> --}}
+    
+    
+    <table class="table text-light">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Thumbnail</th>
+      <th scope="col">Title</th>
+      <th scope="col">Episode</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each movies}}
+    
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td><img src="/images/{{this._id}}.jpg" height="50px" width="100px" alt="" srcset=""></td>
+      <td>{{this.Title}}</td>
+      <td>{{this.Episode}}</td>
+      <td>{{this.Duration}}</td>
+      <td><a class="btn btn-primary" href="">Edit</a></td>
+      <td><a class="btn btn-danger" href="">Remove</a></td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+</section>
+

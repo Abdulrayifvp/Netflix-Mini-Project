@@ -1,0 +1,19 @@
+<section class="bg-dark" style="height: 90vh; width: 100%;">
+      <div class="container">
+        <h4 class="text-light pt-4 pb-4">Trending Now</h4>
+        <div class="row">
+            {{#each movies}}
+          <div class="card bg-dark text-light p-0 me-3 h-auto " style="width: 19rem;">
+            <img src="/images/{{this._id}}.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body row h-auto">
+              <h5 class="card-title">{{this.Title}}</h5>
+              <p class="card-text text-muted fs-6">Episode {{this.Episode}} &#8226; {{this.Duration}} Minutes</p>
+              <a href="#" class="btn btn-danger">Watch Now</a>
+            </div>
+          </div>
+          {{/each}}
+          
+        </div>
+      </div>
+
+    </section>
